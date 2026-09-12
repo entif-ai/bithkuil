@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "abi",
+    "world",
+    "query"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "abi": {
+      "const": "bithkuil-finite-world-0.1.0"
+    },
+    "world": {
+      "type": "object",
+      "required": [
+        "entities",
+        "edges",
+        "reports"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "color",
+              "intended",
+              "actual"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "color": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "intended": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "actual": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              }
+            }
+          },
+          "minItems": 2,
+          "maxItems": 6
+        },
+        "edges": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 15,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            }
+          }
+        },
+        "reports": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    },
+    "query": {
+      "$ref": "#/$defs/query"
+    }
+  },
+  "$defs": {
+    "query": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "a",
+            "b"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "EQ"
+            },
+            "a": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "b": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "group",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "SIZE"
+            },
+            "group": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "minItems": 1,
+              "maxItems": 6,
+              "uniqueItems": true
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "group"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "SAME"
+            },
+            "group": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "minItems": 1,
+              "maxItems": 6,
+              "uniqueItems": true
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "group"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "CONNECTED"
+            },
+            "group": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "minItems": 1,
+              "maxItems": 6,
+              "uniqueItems": true
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "a",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "APL"
+            },
+            "a": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "a",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "PUR"
+            },
+            "a": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "EVID"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "args"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "NOT"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/query"
+              },
+              "minItems": 1,
+              "maxItems": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "args"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "AND"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/query"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "args"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "OR"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/query"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        }
+      ]
+    }
+  },
+  "$comment": "Code additionally enforces consecutive IDs, canonical edge/group order, reference validity, and depth <=4."
+}

@@ -1,12 +1,12 @@
 # Bithkuil
 
-Bithkuil is an experimental machine-oriented semantic representation and developmental-learning research program derived in part from New Ithkuil. This repository is the engineering home for the executable finite-world reference, semantic/token ABIs, developmental teacher machinery, controlled representation codecs, training harness, and the experiments that test whether explicit semantic structure changes learning efficiency.
+Bithkuil is an experimental machine-oriented semantic representation and developmental-learning research program derived in part from New Ithkuil. This repository is the engineering home for the executable finite-world reference, semantic/token ABIs, developmental teacher machinery, controlled representation codecs, training harness, and experiments testing whether explicit semantic structure changes learning efficiency.
 
 ## Status
 
-This repository begins from the public-safe reference implementation recovered from `CP0008-20260912T115723Z-FULL`, produced during the ETR-2026-05 Stage 2 research run on 2026-09-12.
+This repository begins from a curated public-safe import of `CP0008-20260912T115723Z-FULL`, produced during the ETR-2026-05 Stage 2 research run on 2026-09-12. Exact import provenance is recorded in [`docs/CP0008_IMPORT.md`](docs/CP0008_IMPORT.md), with byte counts and SHA-256 identities in [`docs/CP0008_IMPORT_MANIFEST.json`](docs/CP0008_IMPORT_MANIFEST.json).
 
-The imported code is **engineering evidence, not confirmatory efficacy evidence**. It includes deterministic finite-world semantics, independent oracle cross-checks, reversible representation controls, a small transformer student, checkpoint/recovery machinery, teacher/pedagogue boundaries, sealed-evaluation interfaces, smoke configurations, and unit/property tests. The main SYS-01 training experiment has not been run here.
+The imported code is **engineering evidence, not confirmatory efficacy evidence**. It includes deterministic finite-world semantics, independent oracle cross-checks, reversible representation controls, a small transformer student, checkpoint/recovery machinery, teacher/pedagogue boundaries, sealed-evaluation interfaces, smoke configurations, and engineering/property tests. The main SYS-01 training experiment has not been run here.
 
 The research roadmap is tracked in [issue #5](https://github.com/entif-ai/bithkuil/issues/5). Repository bootstrap and reproducibility work is tracked in [issue #6](https://github.com/entif-ai/bithkuil/issues/6).
 
@@ -19,7 +19,7 @@ python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-Run a tiny engineering smoke lineage:
+Run tiny engineering smoke lineages:
 
 ```sh
 python -m bithkuil_ref.run --config configs/smoke-bithkuil-ternary.json --out operator-runs/B-smoke
@@ -33,12 +33,12 @@ These smoke runs validate execution paths. They do not establish a Bithkuil lear
 - `bithkuil_ref/` - finite-world semantics, codecs, student, teacher, sealing, evaluation, branching, statistics, and resumable runner
 - `schemas/` - semantic, run-config, and result schemas
 - `configs/` - tiny smoke/reference configurations and the current SYS design object
-- `tests/` - engineering/property tests from the recovered reference
+- `tests/` - engineering/property tests recovered from CP0008
 - `token-abi.json` - frozen 512-row token allocation used by the reference
-- `grammar-prerequisite-graph.json` - current donor/compiler/curriculum dependency map
+- `grammar-prerequisite-graph.json` - current engineered donor/compiler/curriculum dependency graph
 - `prompts/` - bounded local-pedagogue proposal contract
-- `docs/reference-package/` - selected design and operator documents preserved byte-for-byte from CP0008
-- `docs/CP0008_IMPORT.md` - provenance and import/exclusion record for this bootstrap
+- `docs/CP0008_IMPORT.md` - checkpoint provenance and deliberate public-import exclusions
+- `docs/CP0008_IMPORT_MANIFEST.json` - machine-readable identities for every imported checkpoint file
 
 ## Important boundaries
 
@@ -46,4 +46,4 @@ Bithkuil is not New Ithkuil and is not presented as an official variant of it. T
 
 Gold answers come from executable semantics, not from an LLM. The local pedagogue can propose curriculum choices but cannot certify truth or mastery. TRAIN/DEV/SEALED boundaries and independent-custody requirements remain part of the planned confirmatory experiment.
 
-The source/licensing and redistribution policy for Ithkuil-derived research assets is still being formalized in [issue #35](https://github.com/entif-ai/bithkuil/issues/35). No third-party corpus or sealed/private result payload is included in this bootstrap.
+The source/licensing and redistribution policy for Ithkuil-derived research assets is being formalized in [issue #35](https://github.com/entif-ai/bithkuil/issues/35). The donor-language primitive/source map, result binaries, sealed/private payloads, model-assistance ledgers, and broader research-package contents are deliberately not part of this bootstrap.
