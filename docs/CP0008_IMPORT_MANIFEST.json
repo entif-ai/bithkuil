@@ -1,0 +1,315 @@
+{
+  "manifest_version": "bithkuil-cp0008-import-1",
+  "source_archive": "CP0008-20260912T115723Z-FULL.zip",
+  "source_archive_sha256": "d748810a053ab9c4c3bb9f6d91167d71f527f5a801bde0e9a6b412b454d47010",
+  "package_root": "ETR-2026-05-STAGE2-v0.4.7",
+  "generated_for_repository": "entif-ai/bithkuil",
+  "generated_date": "2026-09-12",
+  "scope": "Core Training/ reference implementation import. Broader reference/research documents are described in docs/PROVENANCE.md.",
+  "status_definitions": {
+    "exact": "Repository bytes are identical to the CP0008 source bytes.",
+    "format-only": "Repository bytes differ only by non-semantic formatting/whitespace normalization.",
+    "patched": "Repository intentionally differs from CP0008 for a documented compatibility/correctness reason."
+  },
+  "summary": {
+    "files": 29,
+    "exact": 26,
+    "format_only": 2,
+    "patched": 1
+  },
+  "files": [
+    {
+      "source_path": "Training/bithkuil_ref/__init__.py",
+      "repository_path": "bithkuil_ref/__init__.py",
+      "source_bytes": 102,
+      "source_sha256": "aac9b7b725a2bdf0eca1f3470544cbdcf98f6cf45e20e061403f599d03dede21",
+      "source_git_blob_sha1": "5a7a9ffc0274cb1da0abe42afb1af69818ecc6d0",
+      "status": "exact",
+      "repository_bytes": 102,
+      "repository_git_blob_sha1": "5a7a9ffc0274cb1da0abe42afb1af69818ecc6d0"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/assistance.py",
+      "repository_path": "bithkuil_ref/assistance.py",
+      "source_bytes": 3921,
+      "source_sha256": "ea2998820ea1bc981a1d32098355b60772cae6deaa4938476e5d3a2ae536a1a5",
+      "source_git_blob_sha1": "185446ab7cbf4923dbd3375b930a60c2d2b53a6b",
+      "status": "exact",
+      "repository_bytes": 3921,
+      "repository_git_blob_sha1": "185446ab7cbf4923dbd3375b930a60c2d2b53a6b"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/codec.py",
+      "repository_path": "bithkuil_ref/codec.py",
+      "source_bytes": 6969,
+      "source_sha256": "e2897d695ceb02dc663bb620499431b16393779d5f8fff9de704129b5c2a481a",
+      "source_git_blob_sha1": "e9063d92824c09fdde805fe4700ad57e5690c439",
+      "status": "exact",
+      "repository_bytes": 6969,
+      "repository_git_blob_sha1": "e9063d92824c09fdde805fe4700ad57e5690c439"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/evaluate.py",
+      "repository_path": "bithkuil_ref/evaluate.py",
+      "source_bytes": 4271,
+      "source_sha256": "60d6e2f185c730ff314918bb25f3c9449668975c17a1571f39054136bdbafd17",
+      "source_git_blob_sha1": "e0dce8afcd8a69c0958c9abd59b71918b040e7c7",
+      "status": "format-only",
+      "repository_bytes": 4273,
+      "repository_git_blob_sha1": "d5b937c94b1b8b31d93e7b569fc4e1c6e21f5b4a",
+      "note": "Import-time whitespace normalization only; executable semantics are unchanged."
+    },
+    {
+      "source_path": "Training/bithkuil_ref/fork.py",
+      "repository_path": "bithkuil_ref/fork.py",
+      "source_bytes": 2409,
+      "source_sha256": "99588d143c6315d44f2e60b3b8953cf2db9d3a302f71a70d3e269d3f3c944777",
+      "source_git_blob_sha1": "f6ce72917776ba1235e06b7c408b4b443d7a1d64",
+      "status": "exact",
+      "repository_bytes": 2409,
+      "repository_git_blob_sha1": "f6ce72917776ba1235e06b7c408b4b443d7a1d64"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/model.py",
+      "repository_path": "bithkuil_ref/model.py",
+      "source_bytes": 4213,
+      "source_sha256": "ab4b8ed631f892ab43c5563c78282af8e169ae491e27ec026d7bcc1571d2b26b",
+      "source_git_blob_sha1": "87e99ae5f30b43b79486e82c6420784a2171528f",
+      "status": "exact",
+      "repository_bytes": 4213,
+      "repository_git_blob_sha1": "87e99ae5f30b43b79486e82c6420784a2171528f"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/pedagogue.py",
+      "repository_path": "bithkuil_ref/pedagogue.py",
+      "source_bytes": 1870,
+      "source_sha256": "61efb292d1861e769e89c45528181b5b8c357c8c4ad6d114a4dd0b2e91b03fdd",
+      "source_git_blob_sha1": "3d457769422952266e2f858af77f0072194920a2",
+      "status": "exact",
+      "repository_bytes": 1870,
+      "repository_git_blob_sha1": "3d457769422952266e2f858af77f0072194920a2"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/run.py",
+      "repository_path": "bithkuil_ref/run.py",
+      "source_bytes": 11861,
+      "source_sha256": "2d503ce1da27598421d4c2210a838e37a4f66ff8b97e33cd30b2d5d5f2144399",
+      "source_git_blob_sha1": "37b5a046414b96635f09dbea4ce26aeceaf12b7f",
+      "status": "exact",
+      "repository_bytes": 11861,
+      "repository_git_blob_sha1": "37b5a046414b96635f09dbea4ce26aeceaf12b7f"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/sealing.py",
+      "repository_path": "bithkuil_ref/sealing.py",
+      "source_bytes": 3950,
+      "source_sha256": "dd72ff32243868d6fc95a2d376d5dce111bb9d01ae65bbf62a2e19b52ba7256d",
+      "source_git_blob_sha1": "7ea73e5882d837c02d1e110e120b39b8d32abbfa",
+      "status": "exact",
+      "repository_bytes": 3950,
+      "repository_git_blob_sha1": "7ea73e5882d837c02d1e110e120b39b8d32abbfa"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/semantics.py",
+      "repository_path": "bithkuil_ref/semantics.py",
+      "source_bytes": 11255,
+      "source_sha256": "c329596afefc41239a15317be8afc4691f0ceb91f6423db736c3022947c960d5",
+      "source_git_blob_sha1": "9eef12aededdc9e285fcb9fabae24511bbd014ac",
+      "status": "exact",
+      "repository_bytes": 11255,
+      "repository_git_blob_sha1": "9eef12aededdc9e285fcb9fabae24511bbd014ac"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/statistics.py",
+      "repository_path": "bithkuil_ref/statistics.py",
+      "source_bytes": 1739,
+      "source_sha256": "e1c934d3f71385419aacc86f3f1380fc7d1e228b0206824bfcb558f9115cb6a8",
+      "source_git_blob_sha1": "9f2f7c77e5e242d985cd3ca5bb67e37e8866a5af",
+      "status": "exact",
+      "repository_bytes": 1739,
+      "repository_git_blob_sha1": "9f2f7c77e5e242d985cd3ca5bb67e37e8866a5af"
+    },
+    {
+      "source_path": "Training/bithkuil_ref/teacher.py",
+      "repository_path": "bithkuil_ref/teacher.py",
+      "source_bytes": 2623,
+      "source_sha256": "9b2c5039af527ac7edf981ff43fa908dcba65d26950b589ad4ac32ad0f6c5d51",
+      "source_git_blob_sha1": "19a805d385ef22ebf36eeed0a4c40777a83a99f2",
+      "status": "exact",
+      "repository_bytes": 2623,
+      "repository_git_blob_sha1": "19a805d385ef22ebf36eeed0a4c40777a83a99f2"
+    },
+    {
+      "source_path": "Training/configs/reference-3m.json",
+      "repository_path": "configs/reference-3m.json",
+      "source_bytes": 693,
+      "source_sha256": "221f4b6049fdb0839c8e5121925ba79c3ac89f3ef48c09fb06b9adf05ab74a6e",
+      "source_git_blob_sha1": "5e57b82cd879159081774c966f255983df98415d",
+      "status": "exact",
+      "repository_bytes": 693,
+      "repository_git_blob_sha1": "5e57b82cd879159081774c966f255983df98415d"
+    },
+    {
+      "source_path": "Training/configs/smoke-bithkuil-fp32.json",
+      "repository_path": "configs/smoke-bithkuil-fp32.json",
+      "source_bytes": 675,
+      "source_sha256": "59747667d8d506acfc9bc8bb2abdbfce9de1ff8f98d01dbe9a38e2096fbbf85d",
+      "source_git_blob_sha1": "8cf51899737f1cedefe0b59725d06dfe5a1e9b40",
+      "status": "exact",
+      "repository_bytes": 675,
+      "repository_git_blob_sha1": "8cf51899737f1cedefe0b59725d06dfe5a1e9b40"
+    },
+    {
+      "source_path": "Training/configs/smoke-bithkuil-ternary.json",
+      "repository_path": "configs/smoke-bithkuil-ternary.json",
+      "source_bytes": 678,
+      "source_sha256": "613147f38447091278e953f74baf81a8bfdf92ef3067266688b943366dfdd07a",
+      "source_git_blob_sha1": "9b8b918876576eb7f3a7c0b76a743d08117484f0",
+      "status": "exact",
+      "repository_bytes": 678,
+      "repository_git_blob_sha1": "9b8b918876576eb7f3a7c0b76a743d08117484f0"
+    },
+    {
+      "source_path": "Training/configs/smoke-cnl-fp32.json",
+      "repository_path": "configs/smoke-cnl-fp32.json",
+      "source_bytes": 670,
+      "source_sha256": "31a9af5f2126f41c89f34678416f02ccd760145fa51d0850a8b946552710d8df",
+      "source_git_blob_sha1": "77b3d9309864e96d07fef149a2c2daf17cdddde0",
+      "status": "exact",
+      "repository_bytes": 670,
+      "repository_git_blob_sha1": "77b3d9309864e96d07fef149a2c2daf17cdddde0"
+    },
+    {
+      "source_path": "Training/configs/smoke-cnl-ternary.json",
+      "repository_path": "configs/smoke-cnl-ternary.json",
+      "source_bytes": 673,
+      "source_sha256": "39050565119e4558e8e52cd5e8d49aac36ef27021d84eb492eb709e93c1416d2",
+      "source_git_blob_sha1": "05769b602dde934ebbb2bc72b2a318d4fcdd42fe",
+      "status": "exact",
+      "repository_bytes": 673,
+      "repository_git_blob_sha1": "05769b602dde934ebbb2bc72b2a318d4fcdd42fe"
+    },
+    {
+      "source_path": "Training/configs/sys-design.json",
+      "repository_path": "configs/sys-design.json",
+      "source_bytes": 1048,
+      "source_sha256": "5c96a07eab875cc2036fbb7ffab62a55baa13a65f86aaa0f7aa297ba3af35c66",
+      "source_git_blob_sha1": "289e24080319492b5d43a33ba25ec94424d33dc7",
+      "status": "exact",
+      "repository_bytes": 1048,
+      "repository_git_blob_sha1": "289e24080319492b5d43a33ba25ec94424d33dc7"
+    },
+    {
+      "source_path": "Training/grammar-prerequisite-graph.json",
+      "repository_path": "abi/grammar-prerequisite-graph.json",
+      "source_bytes": 7202,
+      "source_sha256": "a8112033b483b68902431f49dc9e52e1f20467630932a94443b8ce9f699dab37",
+      "source_git_blob_sha1": "3681b8c95f7cfc23d9d27afed22f0698f73e278e",
+      "status": "format-only",
+      "repository_bytes": 4603,
+      "repository_git_blob_sha1": "00baadd10f2a8e1e2472a12bf687f90cc9b46ba1",
+      "note": "JSON whitespace/pretty-printing was compacted during repository import; parsed graph content is unchanged."
+    },
+    {
+      "source_path": "Training/prompts/local-pedagogue-system.txt",
+      "repository_path": "prompts/local-pedagogue-system.txt",
+      "source_bytes": 563,
+      "source_sha256": "8de5875575afc2d4edaf8ff9228ae258e5bb21fabcf683f0e3339946b7770c88",
+      "source_git_blob_sha1": "104682710219a2d01c4675ea3f61455a51afc06f",
+      "status": "exact",
+      "repository_bytes": 563,
+      "repository_git_blob_sha1": "104682710219a2d01c4675ea3f61455a51afc06f"
+    },
+    {
+      "source_path": "Training/pyproject.toml",
+      "repository_path": "pyproject.toml",
+      "source_bytes": 187,
+      "source_sha256": "da392b4830fa0aea0a248a912c19b16d1aa52cf3dfd2cfb2f23dd63a262f6c2",
+      "source_git_blob_sha1": "7123154b65bcd773d71f2f15d8f0eeef3f51ed8d",
+      "status": "exact",
+      "repository_bytes": 187,
+      "repository_git_blob_sha1": "7123154b65bcd773d71f2f15d8f0eeef3f51ed8d"
+    },
+    {
+      "source_path": "Training/requirements.txt",
+      "repository_path": "requirements.txt",
+      "source_bytes": 64,
+      "source_sha256": "51f5dcaf1eba9e7ec231de57ac767479b48496d1b3e2a3f5d82b7d752ab9768f",
+      "source_git_blob_sha1": "439537589cbac67146568a938dbc17a610e8c0ee",
+      "status": "exact",
+      "repository_bytes": 64,
+      "repository_git_blob_sha1": "439537589cbac67146568a938dbc17a610e8c0ee"
+    },
+    {
+      "source_path": "Training/schemas/config.schema.json",
+      "repository_path": "schemas/config.schema.json",
+      "source_bytes": 4435,
+      "source_sha256": "362ca5845c65e25a2f844ef3d3ccd6e12cc2801fbe3d2d68d96f20ccfc43cd8e",
+      "source_git_blob_sha1": "8ee9717661366ac8565c92b0efdcf3efc4caffc8",
+      "status": "patched",
+      "repository_bytes": 4459,
+      "repository_git_blob_sha1": "ea0ad6cc29ad63218aa359917fe295db53e5345c",
+      "note": "Adds reference-3m to the profile enum because the shipped configs/reference-3m.json uses that profile while the CP0008 source schema admitted only smoke/reference."
+    },
+    {
+      "source_path": "Training/schemas/run-result.schema.json",
+      "repository_path": "schemas/run-result.schema.json",
+      "source_bytes": 705,
+      "source_sha256": "6247473362d6fa09faeff1d97f90d05d9fe3db6506f55e13a7407204c2c17a45",
+      "source_git_blob_sha1": "079aa799d27e226a7be8e76f09ed3f712c0ad973",
+      "status": "exact",
+      "repository_bytes": 705,
+      "repository_git_blob_sha1": "079aa799d27e226a7be8e76f09ed3f712c0ad973"
+    },
+    {
+      "source_path": "Training/schemas/semantic.schema.json",
+      "repository_path": "schemas/semantic.schema.json",
+      "source_bytes": 7572,
+      "source_sha256": "a0cf662d059ec2033adad1d6dfeb617174e2bb7dea0d7db4e3753359ad7c6155",
+      "source_git_blob_sha1": "079ef8fde04efcfc473da7eae4b655b75fa6bda1",
+      "status": "exact",
+      "repository_bytes": 7572,
+      "repository_git_blob_sha1": "079ef8fde04efcfc473da7eae4b655b75fa6bda1"
+    },
+    {
+      "source_path": "Training/tests/test_extensions.py",
+      "repository_path": "tests/test_extensions.py",
+      "source_bytes": 3422,
+      "source_sha256": "12a98b0d16d831abf5252362735cacac11ae5f38603510b30a5d5deaed367b95",
+      "source_git_blob_sha1": "5ee6134a7320e3afb51021432e830af20c69e933",
+      "status": "exact",
+      "repository_bytes": 3422,
+      "repository_git_blob_sha1": "5ee6134a7320e3afb51021432e830af20c69e933"
+    },
+    {
+      "source_path": "Training/tests/test_reference.py",
+      "repository_path": "tests/test_reference.py",
+      "source_bytes": 8208,
+      "source_sha256": "71efffebaaa5b022a02a7aec6f3b3b40e9b8ad15cb5f4fb8be975c38fd9e742f",
+      "source_git_blob_sha1": "b5d4e905bb90676c9d8275219cd822ccb5cabdca",
+      "status": "exact",
+      "repository_bytes": 8208,
+      "repository_git_blob_sha1": "b5d4e905bb90676c9d8275219cd822ccb5cabdca"
+    },
+    {
+      "source_path": "Training/tests/test_sealing.py",
+      "repository_path": "tests/test_sealing.py",
+      "source_bytes": 1084,
+      "source_sha256": "233be361f4f7722ecad2a2a0e32117cd7b4fa3fb7141a8cac32f50afcde5b133",
+      "source_git_blob_sha1": "df4511816e0993e2441c24fcee1a70567ab4e3c4",
+      "status": "exact",
+      "repository_bytes": 1084,
+      "repository_git_blob_sha1": "df4511816e0993e2441c24fcee1a70567ab4e3c4"
+    },
+    {
+      "source_path": "Training/token-abi.json",
+      "repository_path": "abi/token-abi.json",
+      "source_bytes": 10133,
+      "source_sha256": "45232288cf96b0fd0e3fc515c82d2ab7350a11c86e213c00c30b55f55445e610",
+      "source_git_blob_sha1": "1abbba4eb4983f00ba3dcd5a08fb71225532efad",
+      "status": "exact",
+      "repository_bytes": 10133,
+      "repository_git_blob_sha1": "1abbba4eb4983f00ba3dcd5a08fb71225532efad"
+    }
+  ]
+}
