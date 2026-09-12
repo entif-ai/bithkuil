@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "run_class",
+    "profile",
+    "seed",
+    "steps",
+    "tranche_steps",
+    "batch_size",
+    "probe_n",
+    "representation",
+    "teacher_policy",
+    "model",
+    "optimizer",
+    "thresholds",
+    "schema_version"
+  ],
+  "properties": {
+    "run_class": {
+      "const": "ENGINEERING"
+    },
+    "profile": {
+      "enum": [
+        "smoke",
+        "reference",
+        "reference-3m"
+      ]
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "steps": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "tranche_steps": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "batch_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "probe_n": {
+      "type": "integer",
+      "minimum": 4
+    },
+    "representation": {
+      "enum": [
+        "bithkuil",
+        "cnl",
+        "mixed",
+        "isomorphic"
+      ]
+    },
+    "teacher_policy": {
+      "enum": [
+        "topology",
+        "difficulty"
+      ]
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "vocab_size",
+        "context",
+        "width",
+        "layers",
+        "heads",
+        "expansion",
+        "precision"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "vocab_size": {
+          "const": 512
+        },
+        "context": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 4096
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 8,
+          "maximum": 2048
+        },
+        "layers": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "heads": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "expansion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "precision": {
+          "enum": [
+            "ternary",
+            "fp32"
+          ]
+        }
+      }
+    },
+    "optimizer": {
+      "type": "object",
+      "required": [
+        "lr",
+        "betas",
+        "eps",
+        "weight_decay",
+        "clip_norm"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "lr": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "betas": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMaximum": 1
+          }
+        },
+        "eps": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "weight_decay": {
+          "type": "number",
+          "minimum": 0
+        },
+        "clip_norm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "mastery_lower",
+        "retention_lower",
+        "dev_transfer_accuracy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mastery_lower": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "retention_lower": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "dev_transfer_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "assistance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "replay_path",
+            "replay_sha256"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "replay_path": {
+              "type": "string"
+            },
+            "replay_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "event_store",
+            "model_identity_sha256"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "event_store": {
+              "type": "string"
+            },
+            "model_identity_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        }
+      ]
+    },
+    "schema_version": {
+      "const": "bithkuil-reference-config-0.1.0"
+    }
+  },
+  "additionalProperties": false
+}

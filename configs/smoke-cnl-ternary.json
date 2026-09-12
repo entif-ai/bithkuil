@@ -1,0 +1,36 @@
+{
+  "schema_version": "bithkuil-reference-config-0.1.0",
+  "run_class": "ENGINEERING",
+  "profile": "smoke",
+  "seed": 101,
+  "representation": "cnl",
+  "teacher_policy": "topology",
+  "model": {
+    "vocab_size": 512,
+    "context": 384,
+    "width": 32,
+    "layers": 2,
+    "heads": 4,
+    "expansion": 4,
+    "precision": "ternary"
+  },
+  "steps": 4,
+  "tranche_steps": 2,
+  "batch_size": 4,
+  "probe_n": 8,
+  "optimizer": {
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.1,
+    "clip_norm": 1.0
+  },
+  "thresholds": {
+    "mastery_lower": 0.9,
+    "retention_lower": 0.85,
+    "dev_transfer_accuracy": 0.75
+  }
+}

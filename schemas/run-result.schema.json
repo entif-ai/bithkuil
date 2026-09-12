@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "run_class",
+    "scientific_efficacy_claim",
+    "state_sha256",
+    "steps",
+    "examples",
+    "tokens",
+    "teacher",
+    "cost"
+  ],
+  "properties": {
+    "run_class": {
+      "const": "ENGINEERING"
+    },
+    "scientific_efficacy_claim": {
+      "const": false
+    },
+    "state_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "steps": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "examples": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tokens": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": true
+}
