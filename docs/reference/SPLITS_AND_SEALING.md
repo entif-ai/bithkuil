@@ -1,0 +1,29 @@
+# Dataset families, leakage and sealing
+
+## Three visibility classes
+
+TRAIN examples may be consumed by the optimizer and adapted by the teacher. DEV-PROBE examples may influence curriculum and debugging but are never described as untouched generalization evidence. SEALED TEST examples and their generator-family code stay outside the learning and research-remediation loop until the specified milestone. Separate seeds alone do not make separate mechanisms. The integrated design therefore includes generator families, not only different random draws from one generator.
+
+The reference TRAIN and DEV generator uses independent-edge worlds. The illustrated held-out families are cycle-like graphs and disjoint-block graphs. They have different structural construction rules but share the same ontology. They test a limited structural shift, not universal out-of-distribution reasoning. All their code is delivered for reproducibility. Because the production author and current agent have seen it, this delivered sample cannot itself establish blind independent custody for a new confirmatory claim. A custodian must supply or freeze previously unexamined family implementations under the declared ontology for that stronger claim.
+
+## Primary cases must depend on the world
+
+Identity and cardinality are useful developmental scaffolds, but some such questions can be answered from the query alone. They must not inflate the primary claim that a learner used a relational world. The sealed builder therefore requires a legal world-only intervention that changes the answer for each primary stage-1 through stage-4 case. The query remains exactly unchanged. Stage 0 is retained as a diagnostic only. The witness searches single entity-field changes, edge toggles and report-bit changes; failure to find a witness is an exclusion criterion, not a proof that every possible multi-field intervention is irrelevant.
+
+Gold records store the actual intervention witness. A query-only predictor must give the same prediction on the original and counterfactual inputs and therefore cannot solve both opposite-label members. For full confirmatory use, score explicit paired counterfactuals in addition to ordinary balanced cases. The delivered evaluation command scores both ordinary cases and explicit counterfactual pairs. The engineering evaluation contains 40 ordinary cases and 32 world-sensitive pairs, and it cross-checks the intervened gold label before scoring. This verifies the scoring path, not robust learned world use. Independent custody and confirmatory-scale scoring remain launch criteria. This is stronger than merely noting that all arms share the same shortcut.
+
+Each stage uses balanced target classes: TRUE/FALSE for classical tasks and four evidence states for stage 4. Bounded rejection sampling produces the targets. This changes the conditional task distribution, so record rejection counts and check task/operator frequencies by label. The same generator and admission rules must serve all representations. Do not interpret a token-length-only or query-only shortcut as a semantic factorization mechanism.
+
+## File and cryptographic boundaries
+
+`bithkuil_ref.sealing` writes `evaluator-input/cases.jsonl`, `custodian-private/gold.jsonl`, `custodian-private/opening.json` and a public manifest. It never overwrites an existing seal directory. The manifest binds input bytes and a salted SHA-256 commitment to gold bytes. The opening contains the salt, seed and gold identity. This protects against silent byte changes after a declared commitment; it does not establish the date of a public preregistration or prove that the author never saw the answers.
+
+The private directory is created with restrictive mode bits, but OS permissions inside one agent runtime are not an independent custody boundary. Before confirmatory use, transfer the private directory, secret seeds and withheld generation code to a separate custodian account; remove learner access; record the transfer receipt; and expose only the scoring interface at the permitted milestone. The custodian must bind the submitted model/checkpoint hash before opening gold and log every scoring request. A returned aggregate can still leak information through repeated adaptive requests, so the main trial permits one final opening per predeclared seed/arm checkpoint and no remediation afterward.
+
+`--exclude` accepts a JSON list of forbidden semantic hashes from prior TRAIN/DEV pools. Check exact semantic collisions and also audit world/query-family overlap, isomorphic duplicates and templates; SHA-256 equality alone does not remove semantic near-duplicates. The current exact-hash filter is implemented. Graph-isomorphism/template de-duplication is a specified confirmatory audit, not a claimed capability of that filter.
+
+## Milestone and failure rules
+
+Lock the learner code, config, teacher identity, assistance policy, comparisons, seed block and evaluation plan before family identities are revealed. Score the fixed exposure-cap checkpoint even when a stage has not promoted. Select no seed by its development score. For retention, score the promoted checkpoint, a prespecified 256-update interference child and a matched no-interference child; count all extra exposures and keep this secondary protocol separate from the primary fixed-budget run.
+
+If any seal reaches a teacher request, prompt, debug transcript, public issue or research-plane model before opening, mark the epoch EXPOSED. Preserve the artifacts for diagnosis, retire its confirmatory status and create new families/seeds after an amendment. Do not repair the log and relabel the old epoch as sealed. An oracle disagreement invalidates the affected cases and requires a predeclared policy for whether the whole family or run is held. The main protocol chooses zero tolerated unresolved disagreements.

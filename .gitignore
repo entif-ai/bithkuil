@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Local experiment outputs and model artifacts
+runs/
+operator-runs/
+results/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Local sealed/custodian material
+**/custodian-private/
+**/sealed-private/
+
+# Logs / temporary files
+*.log
+*.tmp
+*.bak

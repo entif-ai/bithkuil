@@ -1,6 +1,110 @@
 # Bithkuil
 
-Repository bootstrap in progress. The first reference implementation import is being prepared from the verified CP0008 research checkpoint.
+Bithkuil is an experimental semantic-representation and developmental-learning research program from Entif AI. The project tests whether an explicit, Ithkuil-derived semantic substrate can reduce the data, parameter, compute, or developmental cost required for a bounded learner to acquire reusable relational and compositional competence.
 
-Research roadmap: https://github.com/entif-ai/bithkuil/issues/5
-Repository bootstrap: https://github.com/entif-ai/bithkuil/issues/6
+This repository currently contains the **initial finite-world reference implementation** extracted from the ETR-2026-05 Stage 2 research package (`CP0008-20260912T115723Z-FULL.zip`, report package v0.4.7). It is an engineering reference, not a completed efficacy trial, a trained Bithkuil language model, or a full implementation of New Ithkuil.
+
+## What is here
+
+- `bithkuil_ref/` — finite-world semantics, independent oracle pair, codecs, small transformer student, teacher policy, checkpoint/recovery, sealing, evaluation, and constrained pedagogue adapter.
+- `abi/` — token ABI and grammar-prerequisite graph used by the reference package.
+- `configs/` — smoke, reference-scale, and system-design configurations.
+- `schemas/` — JSON Schemas for semantic objects, run configs, and results.
+- `tests/` — 29 engineering tests covering formal semantics, codecs, token symmetry, restart identity, teacher boundaries, sealing, and related invariants.
+- `docs/reference/` — architecture, semantic/token contracts, Ithkuil primitive map, split/sealing rules, teacher boundaries, checkpoint lineage, and reproducibility gaps.
+- `docs/research/` — the current SYS-01 preregistration and attribution/control plans from the Stage 2 package.
+- `references/` — the source-grounded New Ithkuil grammar map used during the Stage 2 research pass.
+
+The research roadmap lives in [issue #5](https://github.com/entif-ai/bithkuil/issues/5). The repository bootstrap and reproducibility work is tracked in [issue #6](https://github.com/entif-ai/bithkuil/issues/6).
+
+## Scientific status
+
+The reference implementation has passed its delivered engineering suite and tiny smoke runs. The larger integrated SYS-01 scientific trial has **not** been run. In particular, this repository does not yet establish that Bithkuil improves sample efficiency, compute efficiency, transfer, natural-language learning, or low-precision training.
+
+The first scientific program deliberately separates:
+
+1. the integrated systems effect;
+2. representation-specific effects;
+3. adaptive curriculum effects;
+4. generic factorization effects;
+5. tokenizer and sequence-length economics;
+6. precision/ternary interactions; and
+7. later natural-language transfer.
+
+A generic typed representation is allowed to match or beat Bithkuil. A null result is a valid result.
+
+## Quick start
+
+The observed Stage 2 environment was Python 3.13.5 with CPU PyTorch 2.10.0, NumPy 2.3.5, SciPy 1.17.0, and jsonschema 4.26.0.
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
+python -m unittest discover -s tests -v
+```
+
+The delivered suite should report 29 passing tests.
+
+Run a tiny engineering lineage:
+
+```sh
+python -m bithkuil_ref.run \
+  --config configs/smoke-bithkuil-ternary.json \
+  --out runs/bithkuil-ternary-smoke
+```
+
+Run the corresponding controlled-language arm:
+
+```sh
+python -m bithkuil_ref.run \
+  --config configs/smoke-cnl-ternary.json \
+  --out runs/cnl-ternary-smoke
+```
+
+These are execution checks, not scientific confirmation.
+
+## Reference model boundary
+
+The implemented student is a small causal decoder-only transformer with a four-answer supervised readout: `TRUE`, `FALSE`, `UNKNOWN`, and `CONFLICT`. The reference-scale configuration contains 2,828,736 trainable parameters. The ternary branch is W1.58A8-style forward emulation over FP32 master weights, not a packed low-bit kernel.
+
+The current Bithkuil codec is a machine-oriented, lossless finite-world representation informed by selected New Ithkuil distinctions. It is **not** valid surface New Ithkuil and does not claim to implement the language's complete morphology, phonology, lexicon, or writing system.
+
+## Truth boundary
+
+The developmental pedagogue is deliberately non-authoritative. It may propose curriculum choices within a bounded schema, but it does not define gold answers or certify mastery. Formal world generation and the independent oracle pair determine truth for the current synthetic domain.
+
+The guiding rule is:
+
+> LLM proposes; formal machinery disposes.
+
+## Source provenance
+
+The initial import is a public projection of the reference implementation from the ETR-2026-05 Stage 2 CP0008 package. Generated smoke results, binary checkpoints, local custodian material, private production ledgers, and unrelated publication-production artifacts are intentionally not imported into this repository.
+
+See [`docs/PROVENANCE.md`](docs/PROVENANCE.md) for the extraction boundary and [`docs/reference/REPLICATION_GAP_MATRIX.md`](docs/reference/REPLICATION_GAP_MATRIX.md) for what remains unvalidated.
+
+## Research publication
+
+The companion working paper is:
+
+**Prepaying Semantics: Bithkuil as a Developmental Substrate for Representation-Efficient Relational and Compositional Learning**  
+ETR-2026-05, v0.4.7.
+
+Public research page: https://entif.ai/tags/research/2026/09/12/prepaying-semantics/
+
+## Issues and participation
+
+The issue tracker is intentionally part of the research method. It contains the planned semantic ABI work, grammar mapping, generator/oracle construction, dataset audits, teacher controls, SYS-01 plan lock, attribution experiments, replication, and release work.
+
+Start with:
+
+- [#5 — first developmental-training program and SYS-01 roadmap](https://github.com/entif-ai/bithkuil/issues/5)
+- [#7 — semantic ABI and canonical AST](https://github.com/entif-ai/bithkuil/issues/7)
+- [#13 — independent truth oracle](https://github.com/entif-ai/bithkuil/issues/13)
+- [#22 — SYS-01 preregistration and plan lock](https://github.com/entif-ai/bithkuil/issues/22)
+- [#27 — generic typed-IR control](https://github.com/entif-ai/bithkuil/issues/27)
+
+## License
+
+No repository-wide license is declared by this bootstrap commit. Source and redistribution policy is tracked in [issue #35](https://github.com/entif-ai/bithkuil/issues/35). Do not infer rights beyond those granted by applicable source licenses or explicit project releases.
